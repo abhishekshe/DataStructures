@@ -120,5 +120,14 @@ namespace LinkedList
             Console.WriteLine(value);
 
         }
+        public void DeleteFirstElement()
+        {
+            
+            Node temp = head;
+            Console.WriteLine("Element to be removed :\t{0}", temp.data);
+            
+            head = temp.next;
+
+        }
     }
 }
