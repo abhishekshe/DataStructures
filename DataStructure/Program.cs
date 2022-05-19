@@ -35,6 +35,15 @@ namespace LinkedList
            
             list.Display();
 
+            // list.DeleteFirstElement();
+
+            //  (***UC6****)
+
+            list.DeleteLastElement();
+            list.Display();
+
+
+
 
 
 
