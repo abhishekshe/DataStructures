@@ -65,5 +65,60 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Append into linked list", node.data);
         }
+
+        internal Node InBetween(int position, int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("position out of range");
+                }
+            }
+            Console.WriteLine("Inseted value is " + head);
+            return head;
+
+        }
+        internal int search(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
+                if (node.data! == value)
+                {
+
+                    return count;
+                }
+                node = node.next;
+                count++;
+                Console.WriteLine(value);
+
+            }
+            return count;
+            Console.WriteLine(value);
+
+        }
     }
 }
