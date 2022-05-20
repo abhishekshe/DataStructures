@@ -145,26 +145,68 @@ namespace LinkedList
 
         }
 
-        public bool SearchLinkedList(int searchdata)
+        public int SearchLinkedList(int searchdata)
         {
+            
             int index = 0;
+            
             Node temp = head;
+            
             if (head == null)
             {
                 Console.WriteLine("Empty Linked List");
-                return false;
+                return 0;
             }
-            while (temp.next != null)
+            
+            while (temp != null)
             {
                 index += 1;
+                
                 if (temp.data == searchdata)
                 {
                     Console.WriteLine($"{searchdata} is present in the list at {index} position.");
-                    return true;
+                    
+                    return index;
                 }
+                
                 temp = temp.next;
             }
-            return false;
+            return 0;
+        }
+       
+        public void InsertingElementWithData(int data, int searchData)
+        {
+            Node node = new Node(data);
+            Console.WriteLine("\ninserting element after the given data\n");
+            
+            int positionForGivenData = SearchLinkedList(searchData);
+            if (positionForGivenData == 0)
+            {
+
+                Console.WriteLine("Given value do not exist in the linkedlist:\t{0}", searchData);
+            }
+            else if (positionForGivenData == 1)
+            {
+                node.next = head;
+                head = node;
+                Console.WriteLine("\nElement inserted in list:\t{0}", node.data);
+            }
+            
+            else
+            {
+                Node temp = head;
+                Node previous = null;
+                for (int i = 1; i <= positionForGivenData; i++)
+                {
+                    previous = temp;
+                    temp = temp.next;
+                }
+                previous.next = node;
+                node.next = temp;
+                Console.WriteLine("\nElement inserted in list:\t{0}", node.data);
+            }
+
+
         }
     }
 }
