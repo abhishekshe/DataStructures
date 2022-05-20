@@ -43,8 +43,13 @@ namespace LinkedList
             // list.Display();
 
             //(***uc7***)
-            list.SearchLinkedList(56);
-            list.SearchLinkedList(70);
+            //list.SearchLinkedList(56);
+            //list.SearchLinkedList(70);
+
+            //(***uc8***)
+
+            list.InsertingElementWithData(40, 30);
+            list.Display();
 
 
 
