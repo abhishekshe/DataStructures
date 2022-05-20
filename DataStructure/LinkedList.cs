@@ -208,5 +208,37 @@ namespace LinkedList
 
 
         }
+
+        public void DeleteElementFromList(int data)
+        {
+            
+            int positionForGivenData = SearchLinkedList(data);
+            Node temp = head;
+            if (positionForGivenData == 0)
+            {
+
+                Console.WriteLine("Given value do not exist in the linkedlist:\t{0}", data);
+            }
+           
+            else if (positionForGivenData == 1)
+            {
+                head = temp.next;
+            }
+            else
+            {
+                
+                Node previous = null;
+                
+                for (int i = 1; i < positionForGivenData; i++)
+                {
+                    previous = temp;
+                    temp = temp.next;
+                }
+                Console.WriteLine("Deleting Specific element from the list:\t{0}", temp.data);
+                
+
+                previous.next = temp.next;
+            }
+        }
     }
 }

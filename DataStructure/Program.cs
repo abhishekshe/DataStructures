@@ -48,7 +48,10 @@ namespace LinkedList
 
             //(***uc8***)
 
-            list.InsertingElementWithData(40, 30);
+            // list.InsertingElementWithData(40, 30);
+            //  list.Display();
+
+            list.DeleteElementFromList(30);
             list.Display();
 
 
