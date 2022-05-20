@@ -39,8 +39,12 @@ namespace LinkedList
 
             //  (***UC6****)
 
-            list.DeleteLastElement();
-            list.Display();
+            // list.DeleteLastElement();
+            // list.Display();
+
+            //(***uc7***)
+            list.SearchLinkedList(56);
+            list.SearchLinkedList(70);
 
 
 
